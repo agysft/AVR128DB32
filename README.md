@@ -22,14 +22,15 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 - プログラムメモリは128KB、RAMは16KB、内蔵のクロックは24MHzです。
 - 12ビットのADC、10ビットのDAC、OPアンプ、ロジック回路を装備しています。
 
-
+ピン配置：
 ![image](image/AVR128DB32.png)  
 
+ボードマネージャはDxCoreを使用：
 ![image](image/ArduinoSettings.png)
 ---
 ![image](image/a03.JPG) 
 ---
-
+回路図：
 * [schematics](schematics/AVRT_2.pdf)
 
 
