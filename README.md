@@ -24,7 +24,9 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 
 
 ![image](image/AVR128DB32.png)  
+---
 
+![image](image/a03.png) 
 ---
 
 * [schematics](schematics/AVRT_2.pdf)
