@@ -7,15 +7,21 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 ![image](image/a02.JPG)  
 
 特徴
-- Arduino IDEでプログラミング可能
-- I2C制御のリアルタイムクロック(RTC)回路搭載。プログラムで自身の電源をOn/Off可能です。
-- 動作電圧が広い→2.6Vから5.5V。Liバッテリー×1セルでも動作可能。LDO追加すれば15V入力可能です（消費電力注意）。
-- マイクロSDカードコネクター搭載（3.3V以上の電源電圧が必要です）
-  マイクロSDカードI/Fは、Port Cを使ったSPI通信を使用しています（ SPI.swap(SPI1_SWAP_DEFAULT); を設定）。AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2に3.3Vを供給することでSDカード用3.3VのロジックレベルでのSPI通信ができます。
+- Arduino IDEでプログラミング可能。Arduino PRO Miniの様にUSB-Serial I/FでPCと繋いでプログラミング可能です（ブートローダー書き込み済み）。UPDI書き込みも選択可能です。
+  ![image](image/t01_FTDI.png) ![image](image/t02_FTDI.png) ![image](image/t03_Serial.png) ![image](image/t04_UPDI.png) 
+- リアルタイムクロック(RTC)RX8035搭載。I2Cでプログラム可能です。
+  https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf
+  RTCのバックアップに超小型Li２次電池MS621を搭載可能。電源が供給されている時に充電されます。
+  https://akizukidenshi.com/catalog/g/g117518/
+- マイコンの電源をRTCからON/OFF制御可能。ON/OFFはFET-SWで行うので、OFFの時、マイコンの消費電力は0です！
+- ３系統の電源入力があります。
+  J1からの電源電圧は2.6Vから5.5Vの範囲で可能です。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。
+  ![image](image/p01_J1.png) ![image](image/p02_J1.png)
+  Serial(J2)からの電源電圧は2.6Vから5.5Vの範囲で可能です。マイコンに直結されています。
+  VINからの電源電圧はSerialと同じです。U5にSOT23タイプのLDO、AP7375を追加すればクルマの12Vバッテリーでの動作など(Max 45V)も可能です（消費電力注意）。
+  ![image](image/p03_VIN.png)
+- マイクロSDカードコネクター搭載（マイクロSDカードを使うには3.3V以上の電源電圧が必要です）。マイクロSDカードI/Fは、Port Cを使ったSPI通信を使用しています（ SPI.swap(SPI1_SWAP_DEFAULT); を設定）。AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2に3.3Vを供給することでSDカード用3.3VのロジックレベルでのSPI通信ができます。
   https://github.com/SpenceKonde/DxCore/tree/master/megaavr/libraries/SPI
-- RTCのバックアップに超小型Li２次電池MS621を搭載可能。電源が供給されている時に充電されます。
-- ブートローダー書き込み済みなのでArduino PRO Miniの様にUSB-Serial I/Fでプログラミング可能
-  （UPDI書き込みも選択可能です）
 - 付属のピンヘッダをハンダ付けすればブレッドボードで使用できるスリム設計です。
 
 スペック
@@ -24,10 +30,11 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 
 ピン配置：
 ![image](image/AVR128DB32.png)  
-
+---
 ボードマネージャはDxCoreを使用：
 ![image](image/ArduinoSettings.png)
 ---
+使用例：
 ![image](image/a03.JPG) 
 ---
 回路図：
