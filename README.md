@@ -6,7 +6,7 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 ![image](image/a01.JPG)  
 ![image](image/a02.JPG)  
 
-ピン配置：
+## ピン配置
 ![image](image/AVR128DB32.png)  
 ---
 ボードマネージャはDxCoreを使用：
@@ -15,7 +15,7 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
 
 ---
 
-特徴
+## 特徴
 - Arduino IDEでプログラミング可能。Arduino PRO Miniの様にUSB-Serial I/FでPCと繋いでプログラミング可能です(ブートローダー書き込み済み)。<br>
   <p float="left">
     <img src="image/t01_FTDI.png" height="200" /> &nbsp;&nbsp; <img src="image/t02_FTDI.png" height="200" />
@@ -32,7 +32,7 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
   <p float="left">
     <img src="image/p05_power_supply_diagram.png" height="300" /> 
   </p>
-  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VのバッテリでSDカードを使いたい場合は[昇圧電源](https://akizukidenshi.com/catalog/g/g116055/)を搭載できます。<br>
+  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VでSDカードを使いたい場合はJP5をカットし、 [buck-boost converter](https://akizukidenshi.com/catalog/g/g116055/) を背面に実装してください。<br>
     <p float="left">
       <img src="image/p01_J1.png" height="200" /> &nbsp;&nbsp; <img src="image/p02_J1.png" height="200" />
     </p>
@@ -50,15 +50,18 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
   https://github.com/SpenceKonde/DxCore/tree/master/megaavr/libraries/SPI
 - ボードサイズ 95mm x 18.2mm、付属のピンヘッダをハンダ付けすればブレッドボードで使用できるスリム設計です。
 
-スペック<br>
-https://ww1.microchip.com/downloads/en/DeviceDoc/AVR128DB28-32-48-64-DataSheet-DS40002247A.pdf
+## スペック
 - プログラムメモリは128KB、RAMは16KB、内蔵のクロックは24MHzです。
 - 12ビットのADC、10ビットのDAC、OPアンプ、ロジック回路を装備しています。
+- 詳細は[datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/AVR128DB28-32-48-64-DataSheet-DS40002247A.pdf) 参照。
 
-使用例：
+---
+
+## 使用例
 ![image](image/a03.JPG) 
 ---
-回路図：
+
+## 回路図
 * [schematics](schematics/AVRT_2.pdf)
 
 
