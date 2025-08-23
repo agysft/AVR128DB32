@@ -31,13 +31,20 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
   https://akizukidenshi.com/catalog/g/g117518/
 - マイコンの電源をRTCからON/OFF制御可能です。ON/OFFはFETスイッチで行うので、OFFの時マイコンの消費電力は0です！
 - 電源入力は３系統あります。<br>
+  <p float="left">
+    <img src="image/p05_power_supply_diagram.png" height="300" /> 
+  </p>
   - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。<br>
     <p float="left">
       <img src="image/p01_J1.png" height="200" /> &nbsp;&nbsp; <img src="image/p02_J1.png" height="200" />
     </p>
-  - Serial(J2) : 電源電圧は2.6Vから5.5Vです。マイコンに直結されています。
     <br>
-  - VIN : 電源電圧は2.6Vから5.5Vです。U5にSOT23タイプのLDO、AP7375を追加で実装すれば、クルマの12Vバッテリーでの動作など(Max 45V)も可能です（消費電力注意）。<br>
+  - Serial(J2) : 電源電圧は2.6Vから5.5Vです。マイコンに直結されています。<br>
+    <p float="left">
+      <img src="image/p04_Serial.png" height="200" />
+    </p>
+    <br>
+  - VIN : 電源電圧は2.6Vから5.5Vです。初期状態ではU5の1ピンと2ピンにR14が実装されています。これを外してSOT23タイプのLDO、AP7375を実装すれば、クルマの12Vバッテリーでの動作など(Max 45V)も可能です（消費電力注意）。<br>
     <p float="left">
       <img src="image/p03_VIN.png" height="200" />
     </p>
