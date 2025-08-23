@@ -6,9 +6,17 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 ![image](image/a01.JPG)  
 ![image](image/a02.JPG)  
 
+ピン配置：
+![image](image/AVR128DB32.png)  
+---
+ボードマネージャはDxCoreを使用：
+![image](image/ArduinoSettings.png)
+
+---
+
 特徴
 - Arduino IDEでプログラミング可能。Arduino PRO Miniの様にUSB-Serial I/FでPCと繋いでプログラミング可能です（ブートローダー書き込み済み）。UPDI書き込みも選択可能です。
-  ![image](image/t01_FTDI.png) ![image](image/t02_FTDI.png) ![image](image/t03_Serial.png) ![image](image/t04_UPDI.png) 
+  <img src="image/t01_FTDI.png" height="200"><img src="image/t02_FTDI.png" height="200"><img src="image/t03_Serial.png" height="200"><img src="image/t04_UPDI.png" height="200">
 - リアルタイムクロック(RTC)RX8035搭載。I2Cでプログラム可能です。
   https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf
   RTCのバックアップに超小型Li２次電池MS621を搭載可能。電源が供給されている時に充電されます。
@@ -28,12 +36,6 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 - プログラムメモリは128KB、RAMは16KB、内蔵のクロックは24MHzです。
 - 12ビットのADC、10ビットのDAC、OPアンプ、ロジック回路を装備しています。
 
-ピン配置：
-![image](image/AVR128DB32.png)  
----
-ボードマネージャはDxCoreを使用：
-![image](image/ArduinoSettings.png)
----
 使用例：
 ![image](image/a03.JPG) 
 ---
