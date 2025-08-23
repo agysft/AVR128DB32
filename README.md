@@ -15,22 +15,28 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 ---
 
 特徴
-- Arduino IDEでプログラミング可能。Arduino PRO Miniの様にUSB-Serial I/FでPCと繋いでプログラミング可能です（ブートローダー書き込み済み）。UPDI書き込みも選択可能です。
-  <img src="image/t01_FTDI.png" height="200"><img src="image/t02_FTDI.png" height="200"><img src="image/t03_Serial.png" height="200"><img src="image/t04_UPDI.png" height="200">
+- Arduino IDEでプログラミング可能。Arduino PRO Miniの様にUSB-Serial I/FでPCと繋いでプログラミング可能です(ブートローダー書き込み済み)。
+
+  <img src="image/t01_FTDI.png" height="200"><img src="image/t02_FTDI.png" height="200">
+  初期状態はシリアルが選択されていますが、ブートローダーを使わないUPDI書き込みも選択可能です。
+  <img src="image/t03_Serial.png" height="200"><img src="image/t04_UPDI.png" height="200">
 - リアルタイムクロック(RTC)RX8035搭載。I2Cでプログラム可能です。
   https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf
+
   RTCのバックアップに超小型Li２次電池MS621を搭載可能。電源が供給されている時に充電されます。
   https://akizukidenshi.com/catalog/g/g117518/
 - マイコンの電源をRTCからON/OFF制御可能。ON/OFFはFET-SWで行うので、OFFの時、マイコンの消費電力は0です！
 - ３系統の電源入力があります。
   J1からの電源電圧は2.6Vから5.5Vの範囲で可能です。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。
-  ![image](image/p01_J1.png) ![image](image/p02_J1.png)
+  <img src="image/p01_J1.png" height="200"><img src="image/p02_J1.png" height="200">
+
   Serial(J2)からの電源電圧は2.6Vから5.5Vの範囲で可能です。マイコンに直結されています。
+
   VINからの電源電圧はSerialと同じです。U5にSOT23タイプのLDO、AP7375を追加すればクルマの12Vバッテリーでの動作など(Max 45V)も可能です（消費電力注意）。
-  ![image](image/p03_VIN.png)
-- マイクロSDカードコネクター搭載（マイクロSDカードを使うには3.3V以上の電源電圧が必要です）。マイクロSDカードI/Fは、Port Cを使ったSPI通信を使用しています（ SPI.swap(SPI1_SWAP_DEFAULT); を設定）。AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2に3.3Vを供給することでSDカード用3.3VのロジックレベルでのSPI通信ができます。
+  <img src="image/p03_VIN.png" height="200">
+- マイクロSDカードコネクター搭載（マイクロSDカードを使うには3.3V以上の電源電圧が必要です）。マイクロSDカードI/Fは、Port Cを使ったSPI通信を使用しています（ SPI.swap(SPI1_SWAP_DEFAULT); を設定）。AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2にはLDO AP7333で3.3Vを供給しているのでSDカード用3.3VのロジックレベルでのSPI通信ができます。
   https://github.com/SpenceKonde/DxCore/tree/master/megaavr/libraries/SPI
-- 付属のピンヘッダをハンダ付けすればブレッドボードで使用できるスリム設計です。
+- ボードサイズ 95mm x 18.2mm、付属のピンヘッダをハンダ付けすればブレッドボードで使用できるスリム設計です。
 
 スペック
 - プログラムメモリは128KB、RAMは16KB、内蔵のクロックは24MHzです。
