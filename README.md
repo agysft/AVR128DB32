@@ -23,36 +23,37 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
   <p float="left">
     <img src="image/t03_Serial.png" height="200" /> &nbsp;&nbsp; <img src="image/t04_UPDI.png" height="200" />
   </p>
-- リアルタイムクロック(RTC) <a href="https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf" target="_blank" rel="noopener noreferrer"> RX8035 </a>搭載。I2Cでプログラム可能です。
+- リアルタイムクロック(RTC)[RX8035](https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf)搭載。I2Cでプログラム可能です。
   <br>
-  RTCのバックアップに超小型Li２次電池 <a href="https://akizukidenshi.com/catalog/g/g117518/" target="_blank" rel="noopener noreferrer"> MS621 </a>を搭載可能。電源が供給されている時に充電されます。
+  RTCのバックアップに超小型Li２次電池[MS621](https://akizukidenshi.com/catalog/g/g117518/) を搭載可能。電源が供給されている時に充電されます。
+- マイクロSDカードコネクター搭載、電源はLDO[AP7333](https://akizukidenshi.com/goodsaffix/ap7333.pdf)で3.3Vを供給しています。I/Fは、Port Cを使ったSPIを使用しています（ SPI.swap(SPI1_SWAP_DEFAULT); を設定）。AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2に3.3Vを供給することで、3.3VのロジックレベルでのSPI通信を可能です。
+  https://github.com/SpenceKonde/DxCore/tree/master/megaavr/libraries/SPI
 - マイコンの電源をRTCからON/OFF制御可能です。ON/OFFはFETスイッチで行うので、OFFの時マイコンの消費電力は0です！
-- 電源入力は３系統あります。全てダイオードORされています。<br>
+- 電源入力は３系統あります。全てダイオードORされています。マイクロSDカードを使うには3.3V以上の電源電圧が必要です。
   <p float="left">
     <img src="image/p05_power_supply_diagram.png" height="300" /> 
   </p>
-  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VでSDカードを使いたい場合はJP5をカットし、<a href="https://akizukidenshi.com/catalog/g/g116055/" target="_blank" rel="noopener noreferrer"> buck-boost_converter </a> を背面に実装してください。<br>
+  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VでSDカードを使いたい場合は、裏面JP5をカットし、[buck-boost_converter](https://akizukidenshi.com/catalog/g/g116055/) を裏面に実装してください。<br>
     <p float="left">
       <img src="image/p01_J1.png" height="200" /> &nbsp;&nbsp; <img src="image/p02_J1.png" height="200" />
     </p>
-    <br>
-  - Serial(J2) : 電源電圧は2.6Vから5.5Vです。マイコンに直結されています。<br>
+
+  - Serial(J2) : 電源電圧は2.6Vから5.5Vです。マイコンに接続されています。<br>
     <p float="left">
       <img src="image/p04_Serial.png" height="200" />
     </p>
-    <br>
-  - VIN : 電源電圧は2.6Vから5.5Vです。初期状態ではU5の1ピンと2ピンにR14が実装されています。これを外してSOT23タイプのLDO、AP7375を実装すれば、クルマの12Vバッテリーでの動作など(Max 45V)も可能です（消費電力注意）。<br>
+
+  - VIN : 電源電圧は2.6Vから5.5Vです。初期状態ではU5の1ピンと2ピンにR14が実装されています。これを外してSOT23タイプのLDO[AP7375](https://akizukidenshi.com/goodsaffix/ap7375.pdf)を実装することでクルマの12Vバッテリーでの動作などの電圧(Max 45V)も使用可能になります（ただし消費電力に注意）。<br>
     <p float="left">
       <img src="image/p03_VIN.png" height="200" />
     </p>
-- マイクロSDカードコネクター搭載（マイクロSDカードを使うには3.3V以上の電源電圧が必要です）。マイクロSDカードI/Fは、Port Cを使ったSPI通信を使用しています（ SPI.swap(SPI1_SWAP_DEFAULT); を設定）。AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2にはLDO AP7333で3.3Vを供給しているのでSDカード用3.3VのロジックレベルでのSPI通信ができます。
-  https://github.com/SpenceKonde/DxCore/tree/master/megaavr/libraries/SPI
+
 - ボードサイズ 95mm x 18.2mm、付属のピンヘッダをハンダ付けすればブレッドボードで使用できるスリム設計です。
 
 ## スペック
 - プログラムメモリは128KB、RAMは16KB、内蔵のクロックは24MHzです。
 - 12ビットのADC、10ビットのDAC、OPアンプ、ロジック回路を装備しています。
-- 詳細は<a href="https://ww1.microchip.com/downloads/en/DeviceDoc/AVR128DB28-32-48-64-DataSheet-DS40002247A.pdf" target="_blank" rel="noopener noreferrer"> datasheet </a> 参照。
+- 詳細は[Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/AVR128DB28-32-48-64-DataSheet-DS40002247A.pdf) 参照。
 
 ## 使用例
 ![image](image/a03.JPG) 
