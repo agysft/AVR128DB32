@@ -13,7 +13,6 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 https://github.com/SpenceKonde/DxCore/blob/master/README.md
 ![image](image/ArduinoSettings.png)
 
----
 
 ## 特徴
 - Arduino IDEでプログラミング可能。Arduino PRO Miniの様にUSB-Serial I/FでPCと繋いでプログラミング可能です(ブートローダー書き込み済み)。<br>
@@ -24,15 +23,15 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
   <p float="left">
     <img src="image/t03_Serial.png" height="200" /> &nbsp;&nbsp; <img src="image/t04_UPDI.png" height="200" />
   </p>
-- リアルタイムクロック(RTC)[RX8035](https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf)搭載。I2Cでプログラム可能です。
+- リアルタイムクロック(RTC) <a href="https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf" target="_blank" rel="noopener noreferrer"> RX8035 </a>搭載。I2Cでプログラム可能です。
   <br>
-  RTCのバックアップに超小型Li２次電池[MS621](https://akizukidenshi.com/catalog/g/g117518/)を搭載可能。電源が供給されている時に充電されます。
+  RTCのバックアップに超小型Li２次電池 <a href="https://akizukidenshi.com/catalog/g/g117518/" target="_blank" rel="noopener noreferrer"> MS621 </a>を搭載可能。電源が供給されている時に充電されます。
 - マイコンの電源をRTCからON/OFF制御可能です。ON/OFFはFETスイッチで行うので、OFFの時マイコンの消費電力は0です！
 - 電源入力は３系統あります。全てダイオードORされています。<br>
   <p float="left">
     <img src="image/p05_power_supply_diagram.png" height="300" /> 
   </p>
-  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VでSDカードを使いたい場合はJP5をカットし、 [buck-boost converter](https://akizukidenshi.com/catalog/g/g116055/) を背面に実装してください。<br>
+  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VでSDカードを使いたい場合はJP5をカットし、<a href="https://akizukidenshi.com/catalog/g/g116055/" target="_blank" rel="noopener noreferrer"> buck-boost_converter </a> を背面に実装してください。<br>
     <p float="left">
       <img src="image/p01_J1.png" height="200" /> &nbsp;&nbsp; <img src="image/p02_J1.png" height="200" />
     </p>
@@ -53,16 +52,13 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
 ## スペック
 - プログラムメモリは128KB、RAMは16KB、内蔵のクロックは24MHzです。
 - 12ビットのADC、10ビットのDAC、OPアンプ、ロジック回路を装備しています。
-- 詳細は[datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/AVR128DB28-32-48-64-DataSheet-DS40002247A.pdf) 参照。
-
----
+- 詳細は<a href="https://ww1.microchip.com/downloads/en/DeviceDoc/AVR128DB28-32-48-64-DataSheet-DS40002247A.pdf" target="_blank" rel="noopener noreferrer"> datasheet </a> 参照。
 
 ## 使用例
 ![image](image/a03.JPG) 
----
 
 ## 回路図
 * [schematics](schematics/AVRT_2.pdf)
 
 
----
+
