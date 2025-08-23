@@ -24,17 +24,15 @@ https://github.com/SpenceKonde/DxCore/blob/master/README.md
   <p float="left">
     <img src="image/t03_Serial.png" height="200" /> &nbsp;&nbsp; <img src="image/t04_UPDI.png" height="200" />
   </p>
-- リアルタイムクロック(RTC)RX8035搭載。I2Cでプログラム可能です。
-  https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf
+- リアルタイムクロック(RTC)[RX8035](https://akizukidenshi.com/goodsaffix/rx-8035_am.pdf)搭載。I2Cでプログラム可能です。
   <br>
-  RTCのバックアップに超小型Li２次電池MS621を搭載可能。電源が供給されている時に充電されます。
-  https://akizukidenshi.com/catalog/g/g117518/
+  RTCのバックアップに超小型Li２次電池[MS621](https://akizukidenshi.com/catalog/g/g117518/)を搭載可能。電源が供給されている時に充電されます。
 - マイコンの電源をRTCからON/OFF制御可能です。ON/OFFはFETスイッチで行うので、OFFの時マイコンの消費電力は0です！
-- 電源入力は３系統あります。<br>
+- 電源入力は３系統あります。全てダイオードORされています。<br>
   <p float="left">
     <img src="image/p05_power_supply_diagram.png" height="300" /> 
   </p>
-  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。<br>
+  - J1 : 電源電圧は2.6Vから5.5Vです。Liバッテリー×1セルで動作可能。J1からの電源はRTCでON/OFF制御可能です。また、POWERボタンを長押しすると電源をONするようにプログラム可能です。サンプルプログラムを参照してください。2.5Vから3VのバッテリでSDカードを使いたい場合は[昇圧電源](https://akizukidenshi.com/catalog/g/g116055/)を搭載できます。<br>
     <p float="left">
       <img src="image/p01_J1.png" height="200" /> &nbsp;&nbsp; <img src="image/p02_J1.png" height="200" />
     </p>
