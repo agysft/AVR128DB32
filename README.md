@@ -28,7 +28,7 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 
   RTCのバックアップに超小型Li２次電池 [MS621](https://akizukidenshi.com/catalog/goods/search.aspx?search=x&keyword=ms621&search=search) を裏面に搭載可能です。電源が供給されている時に充電されます。<br>An ultra-small rechargeable Li battery can be installed on the back for RTC backup. It charges when power is supplied.
 
-- マイクロSDカードコネクター搭載、電源はLDO [AP7333](https://akizukidenshi.com/goodsaffix/ap7333.pdf)で3.3Vを供給しています。<br>Equipped with a micro SD card connector, power is supplied at 3.3V by LDO.<br> I/Fは、Port Cを使ったSPIを使用しています<br>The I/F uses SPI via Port C.<br> AVR***DB32シリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2に3.3Vを供給することで、3.3VのロジックレベルでのSPI通信が可能です。<br>The AVR***DB32 series' Port C has a built-in level shifter, enabling SPI communication at a logic level of 3.3V by supplying 3.3V to VDDIO2.
+- マイクロSDカードコネクター搭載、電源はLDO [AP7333](https://akizukidenshi.com/goodsaffix/ap7333.pdf)で3.3Vを供給しています。<br>Equipped with a micro SD card connector, power is supplied at 3.3V by LDO.<br> I/Fは、Port Cを使ったSPIを使用しています<br>The I/F uses SPI via Port C.<br> AVR DBシリーズのPort Cにはレベルシフタが内蔵されており、VDDIO2に3.3Vを供給することで、3.3VのロジックレベルでのSPI通信が可能です。<br>The AVR DB series' Port C has a built-in level shifter, enabling SPI communication at a logic level of 3.3V by supplying 3.3V to VDDIO2.
   https://github.com/SpenceKonde/DxCore/tree/master/megaavr/libraries/SPI
 - AVRマイコンの電源をRTCからON/OFF制御可能です。ON/OFFはFETスイッチで行うので、OFFの時マイコンの消費電力は0です！<br>The AVR's power can be controlled ON/OFF from the RTC. Since ON/OFF is performed via an FET switch, the microcontroller's power consumption is 0 when OFF!
 
@@ -41,7 +41,7 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
     <p float="left">
       <img src="image/p01_J1.png" height="200" /> &nbsp;&nbsp;&nbsp;&nbsp; <img src="image/p02_J1.png" height="200" />
     </p>
-    2.5Vから3Vの電源電圧でSDカードを使いたい場合は、裏面のJP5をカットし、[buck-boost_converter](https://akizukidenshi.com/catalog/g/g116055/) を裏面に実装すれば可能です。<br>If you want to use an SD card by a power supply voltage lower than 3.3V, cut JP5 on the back and attach a buck-boost converter to the back.
+    2.5Vから3Vの電源電圧でSDカードを使いたい場合は、裏面のJP5をカットし、[buck_boost_converter](https://akizukidenshi.com/catalog/g/g116055/) を裏面に実装すれば可能です。<br>If you want to use an SD card by a power supply voltage lower than 3.3V, cut JP5 on the back and attach a buck-boost converter to the back.
 
   - シリアル（Serial）:<br> 電源電圧は2.6Vから5.5Vです。マイコンに接続されています。<br>The power supply voltage is 2.6V to 5.5V. It is connected to a AVR.<br>
     <p float="left">
@@ -50,7 +50,7 @@ Arduino IDEでプログラミングできるAVR128DB32マイコン基板です�
 
   - VIN:<br> 電源電圧は2.6Vから5.5Vです。初期状態ではU5の1ピンと2ピンにR14が実装されています。これを外してSOT23タイプのLDO [AP7375](https://akizukidenshi.com/goodsaffix/ap7375.pdf)を実装することで、クルマの12Vバッテリーなどの電圧（Max 45V）も使用可能になります（ただし消費電力に注意）。<br>The power supply voltage is 2.6V to 5.5V. In the initial state, R14 is mounted on pins 1 and 2 of U5. If you want to use a voltage of 12V or higher, such as a car battery (max. 45V), you can do so by removing R14 and mounting an SOT23 type LDO (however, be aware of power consumption).<br>
     <p float="left">
-      <img src="image/p03_VIN.png" height="200" />
+      <img src="image/p03_VIN.png" height="200" /> &nbsp;&nbsp;&nbsp;&nbsp; <img src="image/p03_VIN_2.JPG" height="200" />
     </p>
 
 - ボードサイズ 95mm x 18.2mm、付属のピンヘッダをハンダ付けすればブレッドボードで使用できるスリム設計です。<br>The board size is 95 mm x 18.2 mm, and it has a slim design that can be used with a breadboard by soldering the included pin header.<br>ピンヘッダをボードの おもて面に実装し、裏返して使用することも可能。この場合、リセットボタンとPOWERボタン、それからLEDも裏面実装可能です。どちらのボード面にもピン情報がシルク印刷してあります。<br>The pin header can be mounted on the front of the board, and it can also be used upside down. In this case, the reset button, POWER button, and LED can also be mounted on the back. Pin information is silk-screened on both sides of the board.
